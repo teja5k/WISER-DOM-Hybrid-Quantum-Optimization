@@ -1,59 +1,138 @@
-                 Adaptive Hybrid Quantum–Classical Optimization Framework for Distributed Order Management
+# Adaptive Hybrid Quantum-Classical Optimization Framework for Distributed Order Management
 
-This repository presents a hybrid quantum–classical optimization framework developed for the WISER × Nestlé Quantum Challenge 2026. The project addresses the Distributed Order Management (DOM) problem by determining the optimal distribution center for customer order fulfillment while considering inventory availability, throughput capacity, dock capacity, shipping costs, fulfillment value, and penalty costs.
+## WISER × Nestlé Quantum Challenge 2026
 
-The proposed framework combines classical preprocessing with quantum optimization to improve decision-making. Feasible order-to-distribution-center assignments are generated and ranked using an Adaptive Priority Score. The optimization search space is reduced through an adaptive candidate reduction strategy before formulating the problem as a Quadratic Unconstrained Binary Optimization (QUBO) model. The reduced problem is solved using both an Exact QUBO Solver and the Quantum Approximate Optimization Algorithm (QAOA). A classical Business Repair Layer ensures that the final recommendations satisfy business constraints by removing duplicate assignments and validating solution feasibility.
+This repository presents a Hybrid Quantum-Classical Optimization Framework developed for solving the Distributed Order Management (DOM) problem using the WISER × Nestlé challenge dataset.
 
-The implementation demonstrates how hybrid quantum–classical optimization can address complex combinatorial supply chain problems while remaining compatible with current quantum computing capabilities.
+The proposed framework integrates classical preprocessing, adaptive candidate reduction, Quadratic Unconstrained Binary Optimization (QUBO), the Quantum Approximate Optimization Algorithm (QAOA), and a business repair layer to generate feasible order assignment recommendations under operational constraints.
 
-Project Highlights:
-Hybrid Quantum–Classical Optimization Framework
-Distributed Order Management (DOM)
-Adaptive Candidate Reduction
-Adaptive Priority Score
-QUBO Formulation
-Exact QUBO Optimization
-Quantum Approximate Optimization Algorithm (QAOA)
-Business Repair Layer
-Benchmark Comparison with Classical Baseline
-Scalability Analysis
+---
 
-Key Results:
-Metric	Result
-Total Feasible Assignments	133,495
-Reduced Candidate Assignments	65,857
-Candidate Reduction	50.67%
-Raw Quantum Assignments	15
-Final Business Assignments	12
-Constraint Violations After Repair	0
+## Project Objectives
 
-Benchmark Summary:
-Method	                             Revenue	    Shipping Cost	              Penalty
-Greedy Baseline	                     76,691,433	     32,027,721	                  461.746
-Exact QUBO	                         4,744,085	     22,405	                      0.000
-QAOA	                             2,490,693	     12,477	                      0.040
+- Optimize customer order assignments across multiple distribution centers.
+- Minimize shipping costs and fulfillment penalties.
+- Maximize business value while satisfying operational constraints.
+- Demonstrate the application of hybrid quantum-classical optimization for supply chain management.
 
+---
 
-Technologies Used:
-Python
-Pandas
-NumPy
-Qiskit
-QAOA
-QUBO
-Google Colab
-Jupyter Notebook 
+## Proposed Workflow
 
-Repository Structure:
-├── data/                    # Challenge datasets (not publicly shared)
-├── notebooks/               # Jupyter notebooks
-├── src/                     # Source code
-├── figures/                 # Graphs and framework diagrams
-├── report/                  # Technical report
-├── presentation/            # WISER presentation
-├── planner_view/            # Business planner summary
-├── README.md
-└── requirements.txt
-Note on Data Privacy
+1. Data Preprocessing
+2. Feasible Candidate Generation
+3. Adaptive Priority Score Calculation
+4. Candidate Space Reduction
+5. QUBO Formulation
+6. Exact QUBO Solver
+7. QAOA Optimization
+8. Business Repair Layer
+9. Performance Evaluation
 
-This repository follows the WISER × Nestlé challenge data privacy guidelines. The original challenge datasets contain anonymized operational information and are not included in this repository. Users should obtain the approved dataset through the official WISER challenge workspace.
+---
+
+## Repository Structure
+
+```
+WISER-DOM-Hybrid-Quantum-Optimization/
+
+├── notebooks/
+├── figures/
+├── report/
+├── presentation/
+└── results/
+```
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Qiskit
+- Qiskit Optimization
+- SciPy
+- Jupyter Notebook
+
+---
+
+## Results Summary
+
+| Metric | Value |
+|---------|------:|
+| Candidate Reduction | 50.67% |
+| Final Business Assignments | 12 |
+| Constraint Violations After Repair | 0 |
+| Optimization Framework | Hybrid Quantum-Classical |
+
+---
+
+## Repository Contents
+
+### Report
+- Technical Report (PDF & DOCX)
+- Planner View (PDF & DOCX)
+
+### Presentation
+- WISER Presentation
+
+### Notebook
+- Complete implementation in Jupyter Notebook
+
+### Figures
+- Framework Diagram
+- Candidate Space Reduction
+- Quantum Business Repair
+- Business Constraint Validation
+- Distribution Center Allocation
+
+### Results
+- Benchmark Table
+- Candidate Reduction Statistics
+- Business Repair Statistics
+- Distribution Center Allocation
+- Final Business Assignments
+- QAOA Results
+
+---
+
+## How to Run
+
+1. Install the required Python packages listed in `requirements.txt`.
+2. Open the Jupyter Notebook in the `notebooks/` folder.
+3. Execute the notebook sequentially from top to bottom.
+4. Review the generated figures and result files.
+
+---
+
+## Data Privacy
+
+The original WISER × Nestlé challenge dataset is **not included** in this repository due to challenge data privacy requirements. Only aggregated results, figures, and derived outputs are provided.
+
+---
+
+## Future Work
+
+- Evaluate larger Distributed Order Management datasets.
+- Execute on larger quantum hardware.
+- Explore advanced QAOA parameter tuning.
+- Extend to multi-objective supply chain optimization.
+- Integrate real-time inventory and demand updates.
+
+---
+
+## Author
+
+**Kadiyam Nava Kasturi Teja**
+
+Department of Computer Science and Engineering (Data Science)
+
+R.V.R. & J.C. College of Engineering
+
+---
+
+## Acknowledgement
+
+This project was developed as part of the **WISER × Nestlé Quantum Challenge 2026**.
